@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Login</title></head>
+<body>
+  <h2>Iniciar sesión</h2>
+  <form method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Usuario" required><br>
+    <input type="password" name="password" placeholder="Contraseña" required><br>
+    <button type="submit">Entrar</button>
+  </form>
+  <a href="{% url 'register' %}">Registrarse</a><br>
+  <a href="{% url 'social:begin' 'google-oauth2' %}">Entrar con Google</a>
+</body>
+</html>
